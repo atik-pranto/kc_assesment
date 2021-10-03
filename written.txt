@@ -1,0 +1,95 @@
+# Question_1:
+  
+  Class Shape
+  {
+     float area();
+     void perimeter();
+  }
+  
+  Class Rectangle : public Shape
+  {
+     private:
+     float height, width;
+     
+     public:
+     // Override area function
+     float area()
+     {
+        return height*width;
+     }
+     float perimeter()
+     {
+        2*(height + width);
+     }
+     // encapsulation
+     void geth()
+     {
+        return height;
+     }
+     void geth()
+     {
+        return height;
+     }
+   
+  }
+    
+  Class Circle : public Shape
+  {
+     private:
+     float rad;
+     public:
+     // Override area function
+     float area()
+     {
+        return 3.1416*r*r;
+     }
+     float perimeter()
+     {
+        return 2*3.1416*r;
+     }
+     // encapsulation
+     void getr()
+     {
+        return rad;
+     }
+  }
+
+  As circle and rectangle is a shape and they have some properties common but different functionality. So we can create a class shape where we can define the common
+  property of rectangle and circle then we can inherite them in their child class as they have diffferent functionality so we can override the common function in each
+  class and by overriding this function we can achieve runtime polymorphism.
+
+ 
+# Question_2:
+
+  Stack memory is used for storing local variables and Heap memory is used for storing objects. Stack memory deallocates when function returns but heap memory stores
+  untill the program terminates.
+  As Heap memory has larger space so I will store it in heap memory. Also heap memory allocates the memory dynamically so memory waste can be reduced.
+
+
+# Question_3:
+
+  By using parallel programming concepts we can use multiple core for multiplications of different rows.
+
+
+# Question_4:
+
+  int traverse(Node* node){
+  if (node == null) return 0; //base case
+  count++;
+  count += traverse (node->left) //recursive call
+  count += traverse (node->right) //recursive call
+  return count;
+  }
+  
+  This function will count the node itself, all of it's left child and all of it's right child for every node as count variable is globally declared.
+  This function will overcount the nodes.
+
+  If we want to count every node one time then we have to edit this traverse function.
+  
+  int count = 0;
+  void traverse(Node* node){
+  if (node == null) return; //base case
+  count++;
+  traverse (node->left) //recursive call
+  traverse (node->right) //recursive call
+  }
